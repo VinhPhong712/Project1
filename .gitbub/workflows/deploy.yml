@@ -1,0 +1,16 @@
+name: CI/CD Render
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install backend
+        run: |
+          cd server
+          npm install
